@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MrMilan, Papeleria online</title>
+	<link rel="stylesheet" href="Index.css">
+</head>
+<body>
+	<!-- ENCABEZADO PRINCIPAL: Logo y navegacion -->
+	<header class="site-header">
+		<div class="container">
+			<!-- Bloque de marca: nombre y eslogan -->
+			<div class="brand-row">
+				<h1>MrMilan</h1>
+				<p class="slogan">Tu papeleria online para clase, oficina y creatividad</p>
+			</div>
+
+			<!-- Menu de navegacion principal -->
+			<nav class="main-nav">
+				<ul>
+					<li><a href="Index.html">Inicio</a></li>
+					<li><a href="catalogo.html">Catalogo</a></li>
+					<li><a href="especiales.html">Especiales del Mes</a></li>
+					<li><a href="ayuda.html">Ayuda</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<!-- CONTENIDO PRINCIPAL -->
+	<main class="container">
+		<!-- Seccion hero: bienvenida con imagen -->
+		<section class="hero">
+			<div class="hero-text">
+				<h2>Bienvenido a MrMilan, tu papeleria online</h2>
+				<p>
+					En esta web podras encontrar material para estudiar, trabajar y organizarte
+					mejor cada dia. Explora nuestro catalogo para ver todos los productos.
+				</p>
+				<!-- Boton principal para entrar al catalogo -->
+				<a class="btn" href="catalogo.html">Entrar al catalogo</a>
+			</div>
+			<!-- Imagen de la portada (mesa con material de papeleria) -->
+			<div class="hero-media">
+				<img src="/imagenes/mesa-papeleria.png" alt="Mesa con material de papeleria variado">
+			</div>
+		</section>
+
+		<!-- Seccion de ventajas -->
+		<section class="section-block">
+			<h2>Por que elegir MrMilan</h2>
+			<p>
+				Queremos que comprar papelería online sea rápido y sencillo.
+				Estas son algunas ventajas de nuestra tienda:
+			</p>
+			<!-- Lista de ventajas -->
+			<ul>
+				<li>Compra facil desde cualquier dispositivo.</li>
+				<li>Material para colegio, universidad y oficina.</li>
+				<li>Atencion al cliente en el apartado de ayuda.</li>
+				<li>Novedades cada mes en la seccion de especiales.</li>
+			</ul>
+		</section>
+
+		<!-- Seccion: Como comprar en MrMilan -->
+		<section class="section-block">
+			<h2>Como comprar en MrMilan</h2>
+			<!-- Lista numerada de pasos -->
+			<ol>
+				<li>Entra en la pagina de catalogo y revisa los productos.</li>
+				<li>Anade los articulos al carrito y confirma tu pedido.</li>
+				<li>Recibe informacion del estado del pedido por correo.</li>
+			</ol>
+			<p>
+				Si tienes dudas, visita la pagina de ayuda y cuentanos tu problema!
+			</p>
+			<!-- Boton para ir a la pagina de ayuda -->
+			<a class="btn" href="ayuda.html">Ir a ayuda</a>
+		</section>
+
+		<!-- Seccion: Formulario de newsletter (suscripcion por email) -->
+		<section class="section-block newsletter">
+			<h2>Recibe ofertas de MrMilan</h2>
+			<p>Dejanos tu email para enviarte descuentos y novedades.</p>
+
+			<!-- Formulario con campos de entrada y selector -->
+			<form action="#" method="post">
+				<!-- Campo de nombre con validacion requerida -->
+				<label for="nombre">Nombre</label>
+				<input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+				<!-- Campo de correo electronico con validacion de formato -->
+				<label for="email">Correo electronico</label>
+				<input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+				<!-- Selector de categoria de interes -->
+				<label for="interes">Categoria de interes</label>
+				<select id="interes" name="interes">
+					<option value="estudio">Material de estudio</option>
+					<option value="oficina">Material de oficina</option>
+					<option value="arte">Arte y creatividad</option>
+				</select>
+
+				<!-- Boton de envio del formulario -->
+				<button type="submit" class="btn">Suscribirme</button>
+			</form>
+		</section>
+	</main>
+
+	<!-- FOOTER: Pie de pagina -->
+	<footer class="site-footer">
+		<div class="container">
+			<p>MrMilan - Papeleria online</p>
+			<p>Practica de HTML y CSS | 2026</p>
+		</div>
+	</footer>
+</body>
+</html>

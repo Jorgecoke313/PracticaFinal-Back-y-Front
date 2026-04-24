@@ -1,0 +1,376 @@
+/* VARIABLES GLOBALES: Colores principales del sitio */
+:root {
+	--color-primary: #0f4c81;
+	--color-primary-dark: #0b365b;
+	--color-accent: #ffb703;
+	--color-bg: #f2f5f8;
+	--color-text: #1b1b1b;
+	--color-card: #ffffff;
+	--color-border: #d8dee6;
+}
+
+/* ESTILOS BASICOS: Propiedades generales del documento */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: var(--color-text);
+	background: linear-gradient(180deg, #f8fbff 0%, var(--color-bg) 45%, #e8eef5 100%);
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.container {
+	width: 92%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+/* ENCABEZADO: Estilos del header con logo y menu */
+.site-header {
+	background-color: var(--color-primary);
+	color: #ffffff;
+	padding: 20px 0 12px;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.brand-row h1 {
+	margin: 0;
+	font-size: 2rem;
+}
+
+.slogan {
+	margin-top: 4px;
+	margin-bottom: 0;
+}
+
+.main-nav ul {
+	list-style: none;
+	margin: 16px 0 0;
+	padding: 0;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+/* MENU DE NAVEGACION: Enlaces principales del sitio */
+.main-nav a {
+	color: #ffffff;
+	text-decoration: none;
+	padding: 8px 12px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 6px;
+	display: inline-block;
+}
+
+.main-nav a:hover {
+	background-color: var(--color-primary-dark);
+}
+
+/* SECCION HERO: Bienvenida con imagen destacada */
+.hero {
+	margin-top: 24px;
+	display: grid;
+	grid-template-columns: 1.2fr 1fr;
+	gap: 20px;
+	align-items: center;
+	background-color: var(--color-card);
+	border: 1px solid var(--color-border);
+	border-radius: 10px;
+	padding: 18px;
+}
+
+.hero h2 {
+	margin-top: 0;
+}
+
+.hero-media img {
+	width: 100%;
+	height: 280px;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 8px;
+	border: 1px solid var(--color-border);
+}
+
+/* BOTONES: Estilos del boton principal (color naranja) */
+.btn {
+	display: inline-block;
+	background-color: var(--color-accent);
+	color: #222;
+	text-decoration: none;
+	border: none;
+	border-radius: 6px;
+	padding: 10px 14px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 8px;
+}
+
+.btn:hover {
+	background-color: #f4a100;
+}
+
+/* SECCION DE CONTENIDO: Bloques genericos reutilizables */
+.section-block {
+	margin-top: 24px;
+	background-color: var(--color-card);
+	border: 1px solid var(--color-border);
+	border-radius: 10px;
+	padding: 18px;
+}
+
+.section-block h2 {
+	margin-top: 0;
+}
+
+.newsletter form {
+	display: grid;
+	gap: 8px;
+	max-width: 480px;
+}
+
+/* FORMULARIO: Estilos de campos de entrada */
+input,
+select {
+	padding: 10px;
+	border: 1px solid #bcc7d3;
+	border-radius: 6px;
+	font-size: 0.95rem;
+}
+
+/* VALIDACION DE CAMPOS: Estilos cuando el campo es invalido o valido */
+input:invalid {
+	border-color: #dc3545;
+	background-color: #ffe6e6;
+}
+
+input:valid {
+	border-color: #28a745;
+}
+
+/* FOOTER: Pie de pagina */
+.site-footer {
+	margin-top: 24px;
+	background-color: var(--color-primary-dark);
+	color: #ffffff;
+	padding: 16px 0;
+	text-align: center;
+}
+
+.site-footer p {
+	margin: 4px 0;
+}
+
+/* CUADRICULA DE PRODUCTOS: Layout de 4 columnas */
+.products-grid {
+	margin-top: 14px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 14px;
+}
+
+.product {
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	padding: 12px;
+	background-color: #fbfdff;
+	display: flex;
+	flex-direction: column;
+}
+
+.product img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 6px;
+	margin-bottom: 10px;
+}
+
+.product h3 {
+	margin: 0 0 6px 0;
+	font-size: 1rem;
+}
+
+.product-desc {
+	margin: 0;
+	font-size: 0.9rem;
+	color: #666;
+	flex-grow: 1;
+}
+
+.product-price {
+	margin: 8px 0;
+	font-weight: bold;
+	color: var(--color-primary);
+	font-size: 1.1rem;
+}
+
+/* BOTON PEQUENO: Boton para agregar al carrito en cada producto */
+.btn-small {
+	background-color: var(--color-accent);
+	color: #222;
+	border: none;
+	border-radius: 6px;
+	padding: 8px 12px;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 0.9rem;
+}
+
+.btn-small:hover {
+	background-color: #f4a100;
+}
+
+/* ESPECIALES DEL MES: Estilos para la pagina con el producto destacado */
+.specials-intro {
+	text-align: center;
+}
+
+.special-card {
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: 18px;
+	align-items: center;
+}
+
+.special-media img {
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 8px;
+	border: 1px solid var(--color-border);
+}
+
+.special-content h3 {
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.special-price {
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: var(--color-primary);
+}
+
+.video-box {
+	max-width: 760px;
+	margin: 0 auto;
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	overflow: hidden;
+	background-color: #eef3f9;
+}
+
+.video-box video {
+	width: 100%;
+	display: block;
+	max-height: 430px;
+}
+
+/* AYUDA: Estilos del formulario de incidencias */
+.help-intro {
+	text-align: center;
+}
+
+.help-form {
+	display: grid;
+	gap: 14px;
+	max-width: 780px;
+	margin: 0 auto;
+}
+
+.form-group {
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	padding: 12px;
+	background-color: #fbfdff;
+}
+
+.form-group legend {
+	font-weight: bold;
+	color: var(--color-primary-dark);
+	padding: 0 4px;
+}
+
+.help-form label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 6px;
+}
+
+.help-form input[type="text"],
+.help-form input[type="email"],
+.help-form input[type="date"],
+.help-form select,
+.help-form textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #bcc7d3;
+	border-radius: 6px;
+	font-size: 0.95rem;
+}
+
+.option-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+.option-row label {
+	margin: 0;
+	font-weight: normal;
+}
+
+.help-form textarea {
+	min-height: 110px;
+	resize: vertical;
+}
+
+.help-form .btn {
+	justify-self: start;
+}
+
+/* RESPONSIVE: Estilos para tablets y pantallas medianas */
+@media (max-width: 860px) {
+	.hero {
+		grid-template-columns: 1fr;
+	}
+
+	.hero-media img {
+		height: 220px;
+	}
+
+	.products-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.special-card {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* RESPONSIVE: Estilos para moviles y pantallas pequenas */
+@media (max-width: 560px) {
+	.products-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.main-nav ul {
+		gap: 8px;
+	}
+
+	.main-nav a {
+		padding: 7px 10px;
+		font-size: 0.95rem;
+	}
+}

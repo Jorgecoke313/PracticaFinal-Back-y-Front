@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ayuda, MrMilan Papeleria online</title>
+	<link rel="stylesheet" href="Index.css">
+</head>
+<body>
+	<!-- ENCABEZADO PRINCIPAL: Logo y navegacion -->
+	<header class="site-header">
+		<div class="container">
+			<!-- Bloque de marca: nombre y eslogan -->
+			<div class="brand-row">
+				<h1>MrMilan</h1>
+				<p class="slogan">Tu papeleria online para clase, oficina y creatividad</p>
+			</div>
+
+			<!-- Menu de navegacion principal -->
+			<nav class="main-nav">
+				<ul>
+					<li><a href="Index.html">Inicio</a></li>
+					<li><a href="catalogo.html">Catalogo</a></li>
+					<li><a href="especiales.html">Especiales del Mes</a></li>
+					<li><a href="ayuda.html">Ayuda</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container">
+		<!-- Introduccion del formulario de ayuda -->
+		<section class="section-block help-intro">
+			<h2>Centro de Ayuda</h2>
+			<p>
+				Sentimos el inconveniente. Completa este cuestionario para que podamos ayudarte con tu producto.
+			</p>
+		</section>
+
+		<!-- Cuestionario de incidencias -->
+		<section class="section-block">
+			<form class="help-form" action="#" method="post">   <!-- El action se puede cambiar por la URL del servidor que procese el formulario (CUANDO PONGAMOS EL BACKEND) -->
+				<!-- Datos basicos del cliente -->
+				<fieldset class="form-group">
+					<legend>1. Tus datos</legend>
+
+					<label for="nombre_cliente">Nombre completo</label>
+					<input type="text" id="nombre_cliente" name="nombre_cliente" placeholder="Ejemplo: Ana Lopez" required>
+
+					<label for="correo_cliente">Correo electronico</label>
+					<input type="email" id="correo_cliente" name="correo_cliente" placeholder="ejemplo@correo.com" required>
+
+					<label for="fecha_compra">Fecha aproximada de compra</label>
+					<input type="date" id="fecha_compra" name="fecha_compra" required>
+				</fieldset>
+
+				<!-- Producto con problemas -->
+				<fieldset class="form-group">
+					<legend>2. Producto afectado</legend>
+
+					<label for="producto_id">Selecciona el producto</label>
+					<select id="producto_id" name="producto_id" required>
+						<option value="">-- Elige una opcion --</option>
+						<option value="boli_borrable">Boli borrable</option>
+						<option value="pack_bolis">Pack de boligrafos</option>
+						<option value="lapiz">Lapiz grafito</option>
+						<option value="tipex">Tipex corrector</option>
+					</select>
+
+					<p>Si el problema es con un boli, marca su color:</p>
+
+					<div class="option-row">
+						<input type="radio" id="color_azul" name="color_boli" value="azul">
+						<label for="color_azul">Azul</label>
+					</div>
+					<div class="option-row">
+						<input type="radio" id="color_rojo" name="color_boli" value="rojo">
+						<label for="color_rojo">Rojo</label>
+					</div>
+					<div class="option-row">
+						<input type="radio" id="color_verde" name="color_boli" value="verde">
+						<label for="color_verde">Verde</label>
+					</div>
+				</fieldset>
+
+				<!-- Tipo de incidencia -->
+				<fieldset class="form-group">
+					<legend>3. Que problema tienes</legend>
+
+					<p>Marca todos los sintomas que apliquen:</p>
+
+					<div class="option-row">
+						<input type="checkbox" id="falla_tinta" name="incidencia" value="falta_tinta">
+						<label for="falla_tinta">No sale tinta correctamente</label>
+					</div>
+					<div class="option-row">
+						<input type="checkbox" id="falla_borrado" name="incidencia" value="no_borra">
+						<label for="falla_borrado">No borra bien</label>
+					</div>
+					<div class="option-row">
+						<input type="checkbox" id="falla_rotura" name="incidencia" value="roto">
+						<label for="falla_rotura">Producto roto o defectuoso</label>
+					</div>
+                    <div class="option-row">
+                        <input type="checkbox" id="falla_otro" name="incidencia" value="otro">
+                        <label for="falla_otro">Otro problema</label>
+                        <input type="text" id="falla_otro_texto" name="falla_otro_texto" placeholder="Describe otro problema">
+                    </div>
+					
+				</fieldset>
+
+				<!-- Preferencia de solucion -->
+				<fieldset class="form-group">
+					<legend>4. Solucion deseada</legend>
+
+					<div class="option-row">
+						<input type="radio" id="solucion_reemplazo" name="solucion" value="reemplazo" required>
+						<label for="solucion_reemplazo">Quiero reemplazo del producto</label>
+					</div>
+					<div class="option-row">
+						<input type="radio" id="solucion_devolucion" name="solucion" value="devolucion">
+						<label for="solucion_devolucion">Prefiero devolucion del dinero</label>
+					</div>
+					<div class="option-row">
+						<input type="radio" id="solucion_soporte" name="solucion" value="soporte">
+						<label for="solucion_soporte">Necesito ayuda tecnica</label>
+					</div>
+				</fieldset>
+
+				<button type="submit" class="btn">Enviar cuestionario</button>
+			</form>
+		</section>
+	</main>
+
+	<!-- FOOTER: Pie de pagina -->
+	<footer class="site-footer">
+		<div class="container">
+			<p>MrMilan - Papeleria online</p>
+			<p>Practica de HTML y CSS | 2026</p>
+		</div>
+	</footer>
+</body>
+</html>
