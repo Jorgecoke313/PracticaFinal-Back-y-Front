@@ -2,6 +2,7 @@ package edu.comillas.icai.gitt.pat.spring.practica2.Controlador;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import edu.comillas.icai.gitt.pat.spring.practica2.servicio.ServicioLineaCarrito
 
 
 @RestController
+@CrossOrigin(origins = "*")
 
 public class ControladorLineaCarrito {
     @Autowired
@@ -33,6 +35,13 @@ public class ControladorLineaCarrito {
     public void borrarLinea(@PathVariable long idCarrito, @PathVariable long lineaId){
         logger.info("Borrando linea " + lineaId + " del carrito con ID: " + idCarrito);
         servicioLinea.borrar(idCarrito, lineaId);
+    }
+
+    @DeleteMapping("/api/carrito/{idCarrito}/vaciar")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void vaciarCarrito(@PathVariable long idCarrito){
+        logger.info("Vaciando carrito con ID: " + idCarrito);
+        servicioLinea.vaciarCarrito(idCarrito);
     }
 
 }
