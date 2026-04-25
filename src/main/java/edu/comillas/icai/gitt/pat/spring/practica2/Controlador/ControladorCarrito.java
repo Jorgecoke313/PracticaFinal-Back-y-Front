@@ -6,15 +6,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
 import edu.comillas.icai.gitt.pat.spring.practica2.entity.Carrito;
-import edu.comillas.icai.gitt.pat.spring.practica2.entity.LineaCarrito;
 import edu.comillas.icai.gitt.pat.spring.practica2.servicio.ServicioCarrito;
 
 
-@RestController 
+@RestController
+@CrossOrigin(origins = "*")
 
 public class ControladorCarrito {
  

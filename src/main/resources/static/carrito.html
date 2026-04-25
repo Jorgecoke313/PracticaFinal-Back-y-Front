@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mi Carrito | MrMilan Papeleria online</title>
+	<link rel="stylesheet" href="Index.css">
+</head>
+<body>
+	<!-- ENCABEZADO PRINCIPAL: Logo y navegacion -->
+	<header class="site-header">
+		<div class="container">
+			<!-- Bloque de marca: nombre y eslogan -->
+			<div class="brand-row">
+				<h1>MrMilan</h1>
+				<p class="slogan">Tu papeleria online para clase, oficina y creatividad</p>
+			</div>
+
+			<!-- Menu de navegacion principal -->
+			<nav class="main-nav">
+				<ul>
+					<li><a href="Index.html">Inicio</a></li>
+					<li><a href="catalogo.html">Catalogo</a></li>
+					<li><a href="especiales.html">Especiales del Mes</a></li>
+					<li><a href="ayuda.html">Ayuda</a></li>
+					<li><a href="carrito.html">Mi Carrito</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<!-- CONTENIDO PRINCIPAL: Seccion de carrito -->
+	<main class="container">
+		<!-- Cabecera de la pagina de carrito -->
+		<section class="section-block">
+			<h2>Mi Carrito de Compras</h2>
+			<p>
+				Aqui puedes ver todos los articulos que has agregado al carrito.
+				Revisa los precios y cantidades antes de finalizar tu compra.
+			</p>
+		</section>
+
+		<!-- SECCION DE CARRITO PRINCIPAL -->
+		<section class="section-block carrito-section">
+			<!-- Lista de articulos del carrito -->
+			<div id="carrito-items">
+				<p>El carrito está vacío</p>
+			</div>
+
+			<!-- Resumen y acciones -->
+			<div class="carrito-acciones">
+				<button class="btn" id="btn-vaciar-carrito">Vaciar carrito</button>
+				<button class="btn" id="btn-checkout">Finalizar compra</button>
+			</div>
+		</section>
+	</main>
+
+	<!-- FOOTER: Pie de pagina -->
+	<footer class="site-footer">
+		<div class="container">
+			<p>MrMilan - Papeleria online</p>
+			<p>Practica de HTML y CSS | 2026</p>
+		</div>
+	</footer>
+
+	<!-- Scripts JavaScript -->
+	<script src="/js/config.js?v=2"></script>
+	<script src="/js/carrito.js?v=2"></script>
+	<script src="/js/linea-carrito.js?v=3"></script>
+	<!-- Script para inicializar el carrito al cargar la pagina -->
+	<script>
+		// Inicializar carrito cuando se carga la página
+		window.addEventListener('DOMContentLoaded', function() {
+			// Si no hay carrito, crear uno
+			if (!idCarritoActual) {
+				crearCarrito('Carrito Usuario', 1, 'usuario@mrmilan.com').then(() => {
+					refrescarCarritoDOM();
+				});
+			} else {
+				// Si hay carrito, solo refrescar la visualización
+				refrescarCarritoDOM();
+			}
+		});
+
+		// Event listener para el botón vaciar carrito
+		document.getElementById('btn-vaciar-carrito').addEventListener('click', function() {
+			const confirmacion = confirm('¿Estás seguro de que quieres vaciar el carrito?');
+			if (confirmacion && idCarritoActual) {
+				// Llamar al API para vaciar el carrito
+				const endpoint = '/api/carrito/' + idCarritoActual + '/vaciar';
+				fetch(endpoint, { method: 'DELETE' })
+					.then(response => {
+						if (!response.ok) throw new Error('Error al vaciar carrito');
+						refrescarCarritoDOM();
+					})
+					.catch(error => {
+						console.error('Error:', error);
+						alert('Error al vaciar el carrito');
+					});
+			}
+		});
+
+		// Event listener para el botón checkout
+		document.getElementById('btn-checkout').addEventListener('click', function() {
+			if (!idCarritoActual) {
+				alert('Tu carrito está vacío');
+				return;
+			}
+			alert('¡Gracias por tu compra! Tu pedido ha sido confirmado.');
+			// Aquí se podría redirigir a una página de confirmación o procesar el pago
+		});
+	</script>
+</body>
+</html>
